@@ -10,7 +10,7 @@ import (
 )
 
 func cycle(cycleCount, sum *int, xsum int, img *[240]string) {
-	draw(cycleCount, xsum, img)
+	draw(*cycleCount, xsum, img)
 	move(cycleCount, sum, xsum)
 }
 
@@ -21,11 +21,11 @@ func move(cycleCount, sum *int, xsum int) {
 	}
 }
 
-func draw(cycleCount *int, xsum int, img *[240]string) {
-	if *cycleCount%40 >= xsum-1 && *cycleCount%40 <= xsum+1 {
-		img[*cycleCount] = "#"
+func draw(cycleCount, xsum int, img *[240]string) {
+	if cycleCount%40 >= xsum-1 && cycleCount%40 <= xsum+1 {
+		img[cycleCount] = "#"
 	} else {
-		img[*cycleCount] = "."
+		img[cycleCount] = "."
 	}
 }
 
