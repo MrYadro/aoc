@@ -9,20 +9,20 @@ import (
 	"strings"
 )
 
-func cycle(cycleCount, sum, xsum *int, img *[240]string) {
+func cycle(cycleCount, sum *int, xsum int, img *[240]string) {
 	draw(cycleCount, xsum, img)
 	move(cycleCount, sum, xsum)
 }
 
-func move(cycleCount, sum, xsum *int) {
+func move(cycleCount, sum *int, xsum int) {
 	*cycleCount++
 	if (*cycleCount+20)%40 == 0 {
-		*sum += *cycleCount * *xsum
+		*sum += *cycleCount * xsum
 	}
 }
 
-func draw(cycleCount, xsum *int, img *[240]string) {
-	if *cycleCount%40 >= *xsum-1 && *cycleCount%40 <= *xsum+1 {
+func draw(cycleCount *int, xsum int, img *[240]string) {
+	if *cycleCount%40 >= xsum-1 && *cycleCount%40 <= xsum+1 {
 		img[*cycleCount] = "#"
 	} else {
 		img[*cycleCount] = "."
@@ -47,13 +47,13 @@ func main() {
 		sl := scanner.Text()
 		sla := strings.Split(sl, " ")
 		if sla[0] == "addx" {
-			cycle(&cycleCount, &sum, &xsum, &img)
-			cycle(&cycleCount, &sum, &xsum, &img)
+			cycle(&cycleCount, &sum, xsum, &img)
+			cycle(&cycleCount, &sum, xsum, &img)
 			add, _ := strconv.Atoi(sla[1])
 			xsum += add
 		}
 		if sla[0] == "noop" {
-			cycle(&cycleCount, &sum, &xsum, &img)
+			cycle(&cycleCount, &sum, xsum, &img)
 		}
 	}
 
