@@ -21,6 +21,14 @@ func norm(num float64) float64 {
 	return num
 }
 
+func add(set map[complex128]bool, num complex128) map[complex128]bool {
+	_, ex := set[num]
+	if !ex {
+		set[num] = true
+	}
+	return set
+}
+
 func main() {
 	file, err := os.Open("input")
 	if err != nil {
@@ -61,15 +69,9 @@ func main() {
 					}
 				}
 			}
-			_, ex := moveSet10[rope[9]]
-			if !ex {
-				moveSet10[rope[9]] = true
-			}
 
-			_, ex = moveSet1[rope[1]]
-			if !ex {
-				moveSet1[rope[1]] = true
-			}
+			moveSet10 = add(moveSet10, rope[9])
+			moveSet1 = add(moveSet1, rope[1])
 		}
 	}
 
