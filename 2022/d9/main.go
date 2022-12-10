@@ -56,7 +56,7 @@ func main() {
 					diff := rope[i-1] - rope[i]
 					diffUD := real(diff)
 					diffLR := imag(diff)
-					if math.Abs(diffUD)+math.Abs(diffLR) >= 2 {
+					if math.Abs(diffUD) > 1 || math.Abs(diffLR) > 1 {
 						rope[i] += complex(norm(diffUD), norm(diffLR))
 					}
 				}
