@@ -70,8 +70,8 @@ func main() {
 				}
 			}
 
-			moveSet10 = add(moveSet10, rope[9])
 			moveSet1 = add(moveSet1, rope[1])
+			moveSet10 = add(moveSet10, rope[9])
 		}
 	}
 
