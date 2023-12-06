@@ -1,7 +1,7 @@
 # AdventOfCode
 ## 2023
 ```
-      --------Part 1---------   -------Part 2--------
+      --------Part 1---------   --------Part 2---------
 Day       Time    Rank  Score       Time    Rank  Score
   1       >24h  229390      0       >24h  180237      0
   ```
