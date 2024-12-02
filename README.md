@@ -1,4 +1,9 @@
 # AdventOfCode
+## 2024
+```
+      --------Part 1---------   --------Part 2---------
+Day       Time    Rank  Score       Time    Rank  Score
+  ```
 ## 2023
 ```
       --------Part 1---------   --------Part 2---------
