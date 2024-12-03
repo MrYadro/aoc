@@ -46,7 +46,7 @@ func main() {
 		}
 		for _, rv := range rs {
 			if rv > lv {
-				continue
+				break
 			}
 			if rv == lv {
 				sim += rv
